@@ -266,7 +266,7 @@ def get_EPICOR_skus():
         r"Trusted_Connection=yes;"
     )
 
-    ##    print_gui(f'Attempting to connect to: EPICOR10\n')
+    ##    print_gui(f'Attempting to connect to: SERVERNAME\n')
     try:
         cnxn = pyodbc.connect(conn_str)
     ##        print_gui(f'Successful connection to DB.\n')
@@ -322,7 +322,7 @@ def get_EPICOR_cust():
         r"DATABASE=DBINSTANCE;"
         r"Trusted_Connection=yes;"
     )
-    ##    print_gui(f'Attempting to connect to: EPICOR10\n')
+    ##    print_gui(f'Attempting to connect to: SERVERNAME\n')
     try:
         cnxn = pyodbc.connect(conn_str)
     ##        print_gui(f'Successful connection to DB.\n')
