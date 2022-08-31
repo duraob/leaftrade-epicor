@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+        <section class="flex-sect" id="i1odu">
+            <div class="container-width">
+                <div class="flex-title" id="ihb3d">Leaf Trade Attribute Editor</div>
+                <div class="content">
+                    <div id="loading" style="display:none;">
+                        <img class="flex-title" src="/static/loading_sheep.gif" alt="Loading!" />
+                    </div>
+                </div>
+
+                <div class="cards" id="ivcdp">
+                    <form class="form" method="POST">
+                        <div id="i6q9r">
+                            Download Leaf Trade active batch attribs as csv file [THC, THA, CBD].
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="button" name="batchDL" value="Flip it"
+                                onclick="$('#loading').show();">
+                        </div>
+                    </form>
+                    <form class="form" method="POST" enctype = "multipart/form-data">
+                        <div id="i6q9s">
+                            Update Leaf Trade active batch attribs from csv file.
+                        </div>
+                        <div class="form-group">
+							<input type="file" id="batchFile" name="file" />
+                            <input type="submit" class="button" name="batchUL" value="Spin it"
+                                onclick="$('#loading').show();">
+                        </div>
+                    </form>
+                    <form class="form" method="POST">
+                        <div id="i6q9t">
+                            Download Leaf Trade active inventory info as csv file [uom, quantity, brand, price].
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="button" name="invDL" value="Smash it"
+                                onclick="$('#loading').show();">
+                        </div>
+                    </form>	
+                    <form class="form" method="POST" enctype = "multipart/form-data">
+                        <div id="i6q9u">
+                            Update Leaf Trade active inventory info from csv file.
+                        </div>
+                        <div class="form-group">
+							<input type="file" id="invFile" name="file" />
+                            <input type="submit" class="button" name="invUL" value="Bounce it"
+                                onclick="$('#loading').show();">
+                        </div>
+                    </form>					
+                </div>
+            </div>
+        </section>
+ {% endblock %}

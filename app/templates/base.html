@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap&amp;family=Montserrat:wght@500">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/mainpage.css') }}">
+    <style>
+        * {
+            font-family: Montserrat;
+        }
+
+        .button {
+            font-family: Poppins;
+        }
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+</head>
+    <body id=" id72">
+        <header class="header-banner" id="igae">
+            <div class="container-width" id="ie26">
+                <div class="clearfix" id="ior14"></div>
+                <div class="lead-title" id="ilege"></div>
+            </div>
+        </header>
+        {% block content %}{% endblock %}
+        <footer id="iclclq" class="footer-under">
+            <div data-gjs="navbar" class="navbar">
+                <div class="navbar-container">
+                    <div class="navbar-items-c">
+                        <nav data-gjs="navbar-menu" class="navbar-menu">
+                            <a href="https://app.leaf.trade/storefront/sellers/ctpharma" class="navbar-menu-link" id="leaftrade-site"
+                                target="_blank">
+                                <img class="lt-logo" src='/static/leaftrade-white.png' />
+                            </a>
+                        </nav>
+                        <nav class="navbar-menu">
+                            <a href="{{ url_for('index') }}" class="navbar-menu-link">
+                                Orders
+                            </a>
+                        </nav>
+                        <nav class="navbar-menu">
+                            <a href="{{ url_for('attributes') }}" class="navbar-menu-link">
+                                Attribute Editor
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+<html>

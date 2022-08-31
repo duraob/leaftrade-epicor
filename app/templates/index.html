@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="flex-sect" id="i1odu">
+    <div class="container-width">
+        <div class="flex-title" id="ihb3d">Epicor x Leaf Trade</div>
+        <div class="content">
+            <div id="loading" style="display:none;">
+                <img class="flex-title" src="/static/loading_chicken.gif" alt="Loading!" />
+            </div>
+        </div>
+		{% if alert|length > 0 %}
+		<div class="content">
+			<h3 class="flex-title" style="align-self:center;">{{ alert }}</h3>
+		</div>
+		{% endif %}
+        <div class="cards" id="ivcdp">
+            <form class="form" id="it1ho" method="POST">
+                <div class="form-group">
+                    <label class="label" id="i0sen">Leaf Trade Order Number</label>
+                    <input type="text" id="orderNum" , name="orderNum" class="textarea" id="i6lhh">
+                </div>
+                <div class="form-group" id="ifuww">
+                    <input type="submit" class="button" id="iwt5z" name="migrate-single-order" value="Bop it"
+                        onclick="$('#loading').show();">
+                </div>
+            </form>
+            <form class="form" id="i78v6" method="POST">
+                <div class="form-text" id="irqoa">
+                    Migrate all Leaf Trade Orders with status
+                    Approved into Epicor.
+                </div>
+                <div class="form-group" id="ihq7k">
+                    <input type="submit" class="button" name="migrate-all-orders" value="Pull it"
+                        onclick="$('#loading').show();">
+                </div>
+            </form>
+            <form class="form" id="i78v7" method="POST">
+                <div class="form-text" id="irqob">
+                    Migrate all Leaf Trade Approved Product Credit Requests into Epicor.
+                </div>
+                <div class="form-group" id="ihq7a">
+                    <input type="submit" class="button" name="migrate-all-credits" value="Twist it"
+                        onclick="$('#loading').show();">
+                </div>
+            </form>
+            <form class="form" id="i78v8" method="POST">
+                <div class="form-text" id="irqoc">
+                    Verify LeafTrade Allocations and Epicor Inventory.
+                </div>
+                <div class="form-group" id="ihq7b">
+                    <input type="submit" class="button" name="verify-inventory" value="Flick it"
+                        onclick="$('#loading').show();">
+                </div>
+            </form>	
+            <form class="form" id="i78v9" method="POST">
+                <div class="form-text" id="irqod">
+                    Download Order Form for today's storefront.
+                </div>
+                <div class="form-group" id="ihq7c">
+                    <input type="submit" class="button" name="pull-order-form" value="Flip it"
+                        onclick="$('#loading').show();">
+                </div>
+            </form>						
+        </div>
+        <div class="content">
+            {% if orders|length > 0 %}
+            <div class="flex-title" id="ihb3e">Last Transactions</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>LT Order</th>
+                        <th>Epicor Order</th>
+                        <th>Customer</th>
+                        <th>Cust ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in orders %}
+                    <tr>
+                        <td>
+                            {{ orders[row]['poNum'] }}
+                        </td>
+                        <td>
+                            {{ orders[row]['orderNum'] }}
+                        </td>
+                        <td>
+                            {{ orders[row]['disp'] }}
+                        </td>
+                        <td>
+                            {{ orders[row]['loc'] }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+        </div>
+
+    </div>
+</section>
+{% endblock %}
